@@ -1,0 +1,177 @@
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp0s25: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether 00:21:5a:24:83:3a brd ff:ff:ff:ff:ff:ff
+4: wlx78321bad891c: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 78:32:1b:ad:89:1c brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.4/24 brd 192.168.1.255 scope global noprefixroute wlx78321bad891c
+       valid_lft forever preferred_lft forever
+    inet6 fdfc:3f7c:3a73:ee00:f09a:d66:35ce:691f/64 scope global temporary dynamic 
+       valid_lft 6967sec preferred_lft 3367sec
+    inet6 fdfc:3f7c:3a73:ee00:f791:8d32:d323:d60a/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 6967sec preferred_lft 3367sec
+    inet6 fe80::d36f:248a:4d15:f3c3/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+
+
+math2001@math2001-HP-Compaq-dc7800p-Small-Form-Factor:~/Documents/states$ ping 192.168.1.1
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+64 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=4.63 ms
+64 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=6.05 ms
+64 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=3.76 ms
+64 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=4.79 ms
+64 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=2.67 ms
+64 bytes from 192.168.1.1: icmp_seq=6 ttl=64 time=2.52 ms
+
+math2001@math2001-HP-Compaq-dc7800p-Small-Form-Factor:~/Documents/states$ ping 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+[hangs forever]
+
+Without manually setting a DNS server in the wifi setting window:
+
+math2001@math2001-HP-Compaq-dc7800p-Small-Form-Factor:~/Documents/states$ resolvectl status
+Global
+       LLMNR setting: no
+MulticastDNS setting: no
+  DNSOverTLS setting: no
+      DNSSEC setting: no
+    DNSSEC supported: no
+          DNSSEC NTA: 10.in-addr.arpa
+                      16.172.in-addr.arpa
+                      168.192.in-addr.arpa
+                      17.172.in-addr.arpa
+                      18.172.in-addr.arpa
+                      19.172.in-addr.arpa
+                      20.172.in-addr.arpa
+                      21.172.in-addr.arpa
+                      22.172.in-addr.arpa
+                      23.172.in-addr.arpa
+                      24.172.in-addr.arpa
+                      25.172.in-addr.arpa
+                      26.172.in-addr.arpa
+                      27.172.in-addr.arpa
+                      28.172.in-addr.arpa
+                      29.172.in-addr.arpa
+                      30.172.in-addr.arpa
+                      31.172.in-addr.arpa
+                      corp
+                      d.f.ip6.arpa
+                      home
+                      internal
+                      intranet
+                      lan
+                      local
+                      private
+                      test
+
+Link 4 (wlx78321bad891c)
+      Current Scopes: DNS
+DefaultRoute setting: yes
+       LLMNR setting: yes
+MulticastDNS setting: no
+  DNSOverTLS setting: no
+      DNSSEC setting: no
+    DNSSEC supported: no
+  Current DNS Server: 192.168.1.1
+         DNS Servers: 192.168.1.1
+          DNS Domain: ~.
+
+Link 2 (enp0s25)
+      Current Scopes: none
+DefaultRoute setting: no
+       LLMNR setting: yes
+MulticastDNS setting: no
+  DNSOverTLS setting: no
+      DNSSEC setting: no
+    DNSSEC supported: no
+
+IT WORKS NOW! It's messed up.
+
+1. Turn off wifi (in the menu, top right)
+2. unplug adaptator
+3. plug adaptator
+4. turn on wifi
+
+math2001@math2001-HP-Compaq-dc7800p-Small-Form-Factor:~/Documents/states$ ip -c addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp0s25: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether 00:21:5a:24:83:3a brd ff:ff:ff:ff:ff:ff
+5: wlx78321bad891c: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 78:32:1b:ad:89:1c brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.4/24 brd 192.168.1.255 scope global noprefixroute wlx78321bad891c
+       valid_lft forever preferred_lft forever
+    inet6 fdfc:3f7c:3a73:ee00:4530:1d27:9eec:e24e/64 scope global temporary dynamic 
+       valid_lft 7059sec preferred_lft 3459sec
+    inet6 fdfc:3f7c:3a73:ee00:f791:8d32:d323:d60a/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 7059sec preferred_lft 3459sec
+    inet6 fe80::d36f:248a:4d15:f3c3/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+
+
+math2001@math2001-HP-Compaq-dc7800p-Small-Form-Factor:~/Documents/states$ resolvectl status
+Global
+       LLMNR setting: no
+MulticastDNS setting: no
+  DNSOverTLS setting: no
+      DNSSEC setting: no
+    DNSSEC supported: no
+          DNSSEC NTA: 10.in-addr.arpa
+                      16.172.in-addr.arpa
+                      168.192.in-addr.arpa
+                      17.172.in-addr.arpa
+                      18.172.in-addr.arpa
+                      19.172.in-addr.arpa
+                      20.172.in-addr.arpa
+                      21.172.in-addr.arpa
+                      22.172.in-addr.arpa
+                      23.172.in-addr.arpa
+                      24.172.in-addr.arpa
+                      25.172.in-addr.arpa
+                      26.172.in-addr.arpa
+                      27.172.in-addr.arpa
+                      28.172.in-addr.arpa
+                      29.172.in-addr.arpa
+                      30.172.in-addr.arpa
+                      31.172.in-addr.arpa
+                      corp
+                      d.f.ip6.arpa
+                      home
+                      internal
+                      intranet
+                      lan
+                      local
+                      private
+                      test
+
+Link 5 (wlx78321bad891c)
+      Current Scopes: DNS
+DefaultRoute setting: yes
+       LLMNR setting: yes
+MulticastDNS setting: no
+  DNSOverTLS setting: no
+      DNSSEC setting: no
+    DNSSEC supported: no
+  Current DNS Server: 192.168.1.1
+         DNS Servers: 192.168.1.1
+                      1.1.1.1
+                      1.0.0.1
+          DNS Domain: ~.
+
+Link 2 (enp0s25)
+      Current Scopes: none
+DefaultRoute setting: no
+       LLMNR setting: yes
+MulticastDNS setting: no
+  DNSOverTLS setting: no
+      DNSSEC setting: no
+    DNSSEC supported: no
+
