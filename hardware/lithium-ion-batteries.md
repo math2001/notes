@@ -40,6 +40,24 @@ around 25 °C, i.e., increasing if stored or used at above or below 25 °C (1)
 Relevant study: [Temperature dependent ageing mechanisms in Lithium-ion
 batteries][temp-dependent]
 
+## Fire hazard
+
+They can catch fire because they contain flammable electrolyte.
+
+Short-circuiting a battery will cause the cell to overheat and possibly to
+catch fire. (1)
+
+In the event of a fire, the device may emit dense irritating smoke.
+
+## Damaging and overloading
+
+If a lithium-ion battery is damaged, crushed, or is subjected to a higher
+electrical load without having overcharge protection then problems may arise.
+
+[To reduce risks] many lithium-ion cells (and battery packs) contain fail-safe
+circuitry that disconnects the battery when its voltage is outside the safe
+range of 3–4.2 V per cell. (1)
+
 ## Sources
 
 1. <https://en.wikipedia.org/wiki/Lithium-ion\_battery>
