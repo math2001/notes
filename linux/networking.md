@@ -1,5 +1,19 @@
 # Networking
 
+## Example of protocol which use `tcp/ip`
+
+- HTTP, HTTPS - for web browsing,
+- FTP, TFTP, NFS - for file transfer,
+- SMTP - for sending email messages,
+- POP3 - for receiving email messages,
+- IMAP - for managing email messages on the server,
+- Telnet, rLogin - for accessing remote computers,
+- SNMP - for network management,
+- DNS - for finding IP addresses assigned to Web addresses,
+- IRC - for online chats
+
+Port numbers are 16 bits integers (0 to 65535)
+
 ## A list of networking commands
 
 This list of Linux Networking commands and scripts, will receive ongoing
@@ -105,6 +119,7 @@ $ ip addr
     inet6 fe80::743b:73ff:fe5b:b9d8/64 scope link
        valid_lft forever preferred_lft forever
 ```
+
 
 `lo`, `enp0s25`, `wlx78321bad891c`, `docker0` and `vethda92348@if42` are all
 network interfaces.
@@ -221,3 +236,12 @@ $ ip link delete test0
 ```
 
 Seems to bring everything back to normal
+
+## Check open sockets with `ss`
+
+```
+$ ss # all sockets
+$ ss -tl # tcp listening sockets
+```
+
+
