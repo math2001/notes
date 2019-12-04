@@ -2,24 +2,12 @@
 
 ## Mounting
 
-Mounting "binds" some device's file structure on a regular file tree. Any
-manipulation of the file tree will be replicated (maybe with a delay, ie flush)
-onto the real device.
-
-For example, to mount a USB key, first find it in `/dev/sd*` where `*` is
-usually a letter (a, b, c, ...). Let's say in this case it's `d`
-
-Then, you select the partition (// is it a partition?), so that'll be
-`/dev/sdd1` (the USB will probably only have one partition)
-
 ```
 $ sudo mkdir /mnt/myusbkey
 $ sudo mount /dev/sdd1 /mnt/myusbkey
 $ ls /mnt/myusbkey
 [myusbkey's content!]
 ```
-
-The folder to mount to (mount point?) must already exist before mounting.
 
 To unmount (unbind the virtual file structure with the actual device):
 
@@ -35,7 +23,21 @@ $ umount /dev/sdd1
 $ sudo fdisk -l <device>
 ```
 
-## Get info about devices
+(check the boot column)
+
+## Check where a block device is mounted
+
+    $ df
+
+If a device is mounted on multiple mounting points, then you can see them with
+
+    $ df -a
+
+Also, you probably want to alias/abbreviate `df` to `df -h`
+
+Note that df only shows mounted devices.
+
+## Get info about block devices
 
 A little golden nugget:
 
