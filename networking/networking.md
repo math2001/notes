@@ -1,5 +1,15 @@
 # Networking
 
+## Get info about current connection (IP/MAC)
+
+    $ ip addr
+
+Look at the corresponding interface.
+
+## Neighbours (aka ARP table)
+
+    $ ip neigh
+
 ## Example of protocol which use `tcp/ip`
 
 - HTTP, HTTPS - for web browsing,
