@@ -29,6 +29,12 @@ $ # or specify the device, which I guess unmounts every mounting point
 $ umount /dev/sdd1
 ```
 
+## Check if USB is bootable
+
+```
+$ sudo fdisk -l <device>
+```
+
 ## Get info about devices
 
 A little golden nugget:
