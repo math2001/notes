@@ -1,8 +1,8 @@
-# How the fuck does this computer boot?
+# How the does this computer boot?
 
 ## 0. Turn on hardware
 
-Don't know shit about that. Just happens when you press the on button.
+Don't know anything about that. Just happens when you press the on button.
 
 ## 1. Firmware
 
@@ -60,4 +60,4 @@ the initial root file system.
 
 ## Extras
 
-- https://wiki.archlinux.org/index.php/Arch_boot_process
+- https://wiki.archlinux.org/index.php/Arch\_boot\_process
