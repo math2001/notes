@@ -112,4 +112,10 @@ It's a good idea, so that you require people to use a ssh key. Add this to the
 config file:
 
     PasswordAuthentication no
+    ChallengeResponseAuthentication no
+
+The first option is obvious, however if the second was enabled, it would still
+be possible to login using a password. Challenge Response Authentication is, in
+theory, asking any question to the user to check his identity. In practice, all
+it does is ask for its password
 
