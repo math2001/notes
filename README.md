@@ -1,4 +1,6 @@
 # Notes
 
 Just notes, about anything I think I should remember that doesn't fall in
-predefined category (school for example)
+predefined category.
+
+Things don't have to be organised if they are searchable
