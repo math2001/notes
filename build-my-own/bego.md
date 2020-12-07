@@ -1,5 +1,7 @@
 # Bego
 
+EDIT: no let's not do that
+
 An alternative to Hugo. Written in Go of course.
 
 - [ ] everything is accessible from everywhere, and it is the only way to
